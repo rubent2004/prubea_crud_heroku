@@ -86,16 +86,27 @@ WSGI_APPLICATION = 'practica_1.wsgi.application'
 #    }
 #}
 #postgres con render.com
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'prueba_host',
+#        'USER': 'restaurant_d6yj_user',
+#        'PASSWORD': 'K72blurtTW5Xf68vRLoW8qnWYIbxRf4r',
+#        'HOST': 'dpg-culmvrqn91rc73efdqt0-a.oregon-postgres.render.com',
+#       'PORT': '5432',
+#    }
+#}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'prueba_host',
-        'USER': 'restaurant_d6yj_user',
-        'PASSWORD': 'K72blurtTW5Xf68vRLoW8qnWYIbxRf4r',
-        'HOST': 'dpg-culmvrqn91rc73efdqt0-a.oregon-postgres.render.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 't4prq68eg58nlli7',
+        'USER': 'o8l08wdj2lb4aln7',
+        'PASSWORD': 'z3rktxwx69gztd1r',
+        'HOST': 'ofcmikjy9x4lroa2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
+
 
 
 

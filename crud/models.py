@@ -5,7 +5,7 @@ from django.db import models
 
 class Curso(models.Model):
     nombre = models.CharField(max_length=100)
-    codigo = models.CharField(max_length=10, unique=True)
+    codigo = models.CharField(max_length=11, unique=True)
 
     def __str__(self):
         return self.nombre
@@ -23,10 +23,10 @@ class Tarea(models.Model):
     TIPO_TAREA_CHOICES = [
         ('Parcial', 'Parcial'),
         ('Laboratorio', 'Laboratorio'),
+        ('Examen', 'Examen'),
         ('Otro', 'Otro'),
     ]
-
-    titulo = models.CharField(max_length=100)
+    titulo = models.CharField(max_length=110)
     descripcion = models.TextField()
     fecha_entrega = models.DateField()
     tipo_tarea = models.CharField(max_length=20, choices=TIPO_TAREA_CHOICES)
@@ -45,3 +45,9 @@ class Inscripcion(models.Model):
 
     def __str__(self):
         return f"{self.estudiante} inscrito en {self.curso}"
+
+class table(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
