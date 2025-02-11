@@ -1,0 +1,3 @@
+#copiar para poder correr el sistema en la terminal
+
+.\setup.bat
