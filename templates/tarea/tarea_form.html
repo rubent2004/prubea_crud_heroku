@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h2>{% if object %}Editar{% else %}Nueva{% endif %} Tarea</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="form-group d-flex justify-content-between mt-3">
+            <button type="submit" class="btn btn-success">Guardar</button>
+            <a href="{% url 'tarea_list' %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+{% endblock %}

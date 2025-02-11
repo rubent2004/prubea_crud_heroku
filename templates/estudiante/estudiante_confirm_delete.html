@@ -1,0 +1,30 @@
+{% extends 'base.html' %}  <!-- Extiende tu base.html -->
+
+{% block content %}
+    <div class="container mt-4">
+        <h2>Confirmar Eliminación</h2>
+        <hr>
+
+        <!-- Mensaje de confirmación -->
+        <div class="alert alert-danger" role="alert">
+            ¿Estás seguro de que deseas eliminar al estudiante <strong>{{ object.nombre }} {{ object.apellido }}</strong>?
+        </div>
+
+        <!-- Detalles del estudiante -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Detalles del Estudiante</h5>
+                <p class="card-text"><strong>Nombre:</strong> {{ object.nombre }}</p>
+                <p class="card-text"><strong>Apellido:</strong> {{ object.apellido }}</p>
+                <p class="card-text"><strong>Matrícula:</strong> {{ object.matricula }}</p>
+            </div>
+        </div>
+
+        <!-- Formulario de confirmación -->
+        <form method="post">
+            {% csrf_token %}  <!-- Token de seguridad de Django -->
+            <button type="submit" class="btn btn-danger">Sí, Eliminar</button>
+            <a href="{% url 'estudiante_list' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+{% endblock %}

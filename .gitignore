@@ -1,0 +1,50 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribución de paquetes
+*.egg-info/
+*.eggs/
+dist/
+build/
+eggs/
+
+# Archivos de entorno virtual
+venv/
+ENV/
+env/
+.venv/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Logs y bases de datos locales
+*.log
+*.sqlite3
+
+# Archivos creados por el editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de configuración de la base de datos
+*.env
+
+# Directorios de medios (archivos subidos por el usuario)
+media/
+
+# Archivos temporales
+*.bak
+*.swp
+*.swo
+*.tmp
+
+# Directorios de migraciones
+*/migrations/
+
+# Archivos de configuraciones y secrets
+config/settings_local.py
+config/.secrets/

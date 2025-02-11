@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Cursos</h2>
+    <a href="{% url 'curso_create' %}" class="btn btn-primary mb-3">Nuevo Curso</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Código</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for curso in object_list %}
+            <tr>
+                <td>{{ curso.nombre }}</td>
+                <td>{{ curso.codigo }}</td>
+                <td>
+                    <a href="{% url 'curso_edit' curso.pk %}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{% url 'curso_delete' curso.pk %}" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

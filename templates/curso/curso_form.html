@@ -1,0 +1,25 @@
+{% extends 'base.html' %}  <!-- Extiende tu base.html -->
+{% load crispy_forms_tags %}  <!-- Carga crispy_forms para estilizar el formulario -->
+
+{% block content %}
+    <div class="container mt-4">
+        <h2>{% if object %}Editar{% else %}Crear{% endif %} Curso</h2>
+        <hr>
+
+        <!-- Formulario -->
+        <form method="post">
+            {% csrf_token %}  <!-- Token de seguridad de Django -->
+
+            <!-- Renderiza el formulario con crispy-forms -->
+            {{ form|crispy }}
+
+            <!-- Botones de acción -->
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">
+                    {% if object %}Guardar Cambios{% else %}Crear Curso{% endif %}
+                </button>
+                <a href="{% url 'curso_list' %}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

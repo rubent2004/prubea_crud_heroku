@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Estudiantes</h2>
+    <a href="{% url 'estudiante_create' %}" class="btn btn-primary mb-3">Nuevo Estudiante</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Matrícula</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for estudiante in object_list %}
+            <tr>
+                <td>{{ estudiante.nombre }}</td>
+                <td>{{ estudiante.apellido }}</td>
+                <td>{{ estudiante.matricula }}</td>
+                <td>
+                    <a href="{% url 'estudiante_edit' estudiante.pk %}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{% url 'estudiante_delete' estudiante.pk %}" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

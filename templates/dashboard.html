@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="mt-4">Panel de Inicio</h1>
+
+        <!-- Resumen de estadísticas -->
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card text-white bg-primary mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Cursos</h5>
+                        <p class="card-text">{{ total_cursos }} cursos registrados</p>
+                        <a href="{% url 'curso_list' %}" class="btn btn-light">Ver Cursos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-white bg-success mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Estudiantes</h5>
+                        <p class="card-text">{{ total_estudiantes }} estudiantes registrados</p>
+                        <a href="{% url 'estudiante_list' %}" class="btn btn-light">Ver Estudiantes</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-white bg-warning mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Tareas</h5>
+                        <p class="card-text">{{ total_tareas }} tareas registradas</p>
+                        <a href="{% url 'tarea_list' %}" class="btn btn-light">Ver Tareas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lista de tareas pendientes -->
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5 class="card-title">Próximas Tareas</h5>
+            </div>
+            <div class="card-body">
+                {% if tareas_pendientes %}
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Curso</th>
+                            <th>Fecha de Entrega</th>
+                            <th>Tipo</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for tarea in tareas_pendientes %}
+                            <tr>
+                                <td>{{ tarea.titulo }}</td>
+                                <td>{{ tarea.curso.nombre }}</td>
+                                <td>{{ tarea.fecha_entrega }}</td>
+                                <td>{{ tarea.get_tipo_tarea_display }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>No hay tareas pendientes.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
