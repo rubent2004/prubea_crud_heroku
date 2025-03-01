@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -86,26 +87,29 @@ WSGI_APPLICATION = 'practica_1.wsgi.application'
 #    }
 #}
 #postgres con render.com
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'prueba_host',
-#        'USER': 'restaurant_d6yj_user',
-#        'PASSWORD': 'K72blurtTW5Xf68vRLoW8qnWYIbxRf4r',
-#        'HOST': 'dpg-culmvrqn91rc73efdqt0-a.oregon-postgres.render.com',
-#       'PORT': '5432',
-#    }
-#}
+#Base de datos de Render
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 't4prq68eg58nlli7',
-        'USER': 'o8l08wdj2lb4aln7',
-        'PASSWORD': 'z3rktxwx69gztd1r',
-        'HOST': 'ofcmikjy9x4lroa2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'rubent_db_kykz',
+        'USER': 'rubent_db_kykz_user',
+        'PASSWORD': 'vHmyFQtS7IBIygUs1Pvu1WmbgKmoS58E',
+        'HOST': 'dpg-cumklmt6l47c73b7nd40-a.oregon-postgres.render.com',
+       'PORT': '5432',
     }
 }
+
+#Base de datos de heroku
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 't4prq68eg58nlli7',
+#        'USER': 'o8l08wdj2lb4aln7',
+#        'PASSWORD': 'z3rktxwx69gztd1r',
+#        'HOST': 'ofcmikjy9x4lroa2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+#        'PORT': '3306',
+#     }
+# }
 
 
 
@@ -132,13 +136,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-sv'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'UTC-6'  # Cambia a la zona horaria que necesites
+USE_TZ = True
 
 USE_I18N = True
 
-USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)

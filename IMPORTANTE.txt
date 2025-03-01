@@ -1,3 +1,12 @@
 #copiar para poder correr el sistema en la terminal
 
 .\setup.bat
+
+#Iniciar entrono virtual
+
+.venv\Scripts\activate
+
+python manage.py makemigrations crud
+python manage.py migrate
+
+python manage.py runserver
